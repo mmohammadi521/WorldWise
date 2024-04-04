@@ -16,11 +16,8 @@ import {
 // import Button from "./Button";
 
 function Map() {
-  return (
-    <>
-      <p>map</p>
-    </>
-  );
+  const [searchParams, setSearchParams] = useSearchParams();
+
   // const { cities } = useCities();
   // const [mapPosition, setMapPosition] = useState([40, 0]);
   // const {
