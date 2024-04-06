@@ -1,12 +1,9 @@
-import { cityType } from "../type/citiesType";
+import { useCities } from "../contexts/citiesContext";
 import CityItem from "./CityItem";
 import styles from "./CityList.module.css";
 
-interface TypeProps {
-  cities: cityType[];
-  isLoading: boolean;
-}
-const CityList = ({ cities, isLoading }: TypeProps) => {
+const CityList = () => {
+  const { cities, isLoading } = useCities();
   if (isLoading) return <p>loading ...</p>;
   return (
     <>

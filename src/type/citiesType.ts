@@ -3,9 +3,10 @@ export interface cityType {
   country: string;
   emoji: string;
   date: string;
-  id: number;
+  id: string;
   position: {
-    lat: string;
-    lng: string;
+    lat: number;
+    lng: number;
   };
+  notes: string;
 }
