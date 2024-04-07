@@ -15,8 +15,13 @@ const formatDate = (date: string) =>
   }).format(new Date(date));
 
 const CityItem = ({ city }: PropsType) => {
-  const { currentCity } = useCities();
+  const { currentCity, deleteCity } = useCities();
   const { cityName, emoji, date, id, position } = city;
+
+  const deletItem = (e: any) => {
+    e.preventDefault();
+    deleteCity(id);
+  };
   return (
     <>
       <li>
@@ -29,7 +34,9 @@ const CityItem = ({ city }: PropsType) => {
           <span className={styles.emoji}>{emoji}</span>
           <h3 className={styles.name}>{cityName}</h3>
           <time className={styles.date}>({formatDate(date)})</time>
-          <button className={styles.deleteBtn}>&times;</button>
+          <button className={styles.deleteBtn} onClick={deletItem}>
+            &times;
+          </button>
         </Link>
       </li>
     </>
